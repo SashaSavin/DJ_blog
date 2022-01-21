@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<div class="container">
+    {% if tag %}
+        <h2>Посты отмеченные тэгом: "{{ tag.name }}"</h2>
+    {% endif %}
+</div>
+
+{% for post in posts %}
+<div class="container">
+    <div class="card m-4" >
+      <div class="card-body">
+          <a href="{% url 'post_detail' post.pk %}"><h1>{{post.title}}</h1></a>
+
+
+                    <div class="tags">#:{% for tag in post.tags.all %}
+                        <a href="{% url 'post_list_by_tag' tag.slug %}" style="text-decoration: none">
+                            {{ tag.name  }}
+                        </a>
+                        {% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+
+                    </div>
+
+        <p class="card-text">{{post.text}}</p>
+      </div>
+    </div>
+</div>
+
+{% endfor %}
+<div class="container">{% include "paginator.html" with page=posts %}</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+pip install Django - установка django
+django-admin startproject core . - создание проекта с именем core
+python manage.py startapp blog - создание блога
+python manage.py runserver - запуск сервера
+python manage.py migrate - перевод кода питона в базу данных
+
+1) Документация, свяжем core + blog  +
+2) Создадим связку url + view   +
+3) Создадим модель post  +
+4) Выведем posts на страницу : models -> views -> urls -> html
+5) Язык шаблонов django {% %} +
+6) Выведем detail_views (пост) +
+7) Бутстрап верстка +
+
+
+8) Пагинация  +
+9) Комментарий +
+10) Тэги +
+12) Тест +
+12.1) FontAwesome +
+12.2) GoogleFont +
+13) Заливаем на гитхаб, гит
+14) Деплой на pythonanywhere

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="card m-4" >
+
+      <div class="card-body">
+          <h1>{{post.title}}</h1>
+          <p class="card-text">{{post.text}}</p>
+      </div>
+    </div>
+</div>
+
+<h2 style="text-align:center"><i class="far fa-comments"></i> Комментарии:</h2>
+
+{% for comment in comments %}
+    <div class="container">
+    <div class="card m-4" >
+      <div class="card-body">
+          <h1> {{ comment.username }}</h1>
+          <p class="card-text"> {{ comment.text }}</p>
+      </div>
+    </div>
+    </div>
+{% endfor %}
+
+<div class="container">
+    <form action="" method="post"> {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-primary">
+    </form>
+</div>
+
+{% endblock %}
+
+
+
