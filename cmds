@@ -19,5 +19,7 @@ python manage.py migrate - перевод кода питона в базу да
 12) Тест +
 12.1) FontAwesome +
 12.2) GoogleFont +
-13) Заливаем на гитхаб, гит
+13) Заливаем на гитхаб, гит +
 14) Деплой на pythonanywhere
+
+15) :)
